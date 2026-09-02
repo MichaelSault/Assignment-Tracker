@@ -47,7 +47,7 @@ struct ContentView: View {
     }
     
     @State private var assignments: [Assignment] = [
-        Assignment(name: "Assignment1", assignedTo: "Madeleine", effort: 90, AIMode: AIMode.AMBER, Status: Status.inProgress),
+        Assignment(name: "Assignment1", assignedTo: "Madeleine", effort: 90, notes: "this is the first assignment", AIMode: AIMode.AMBER, Status: Status.inProgress, ),
         Assignment(name: "Assignment2", assignedTo: "", effort: 30, AIMode: AIMode.RED, Status: Status.notStarted),
         Assignment(name: "Assignment3", assignedTo: "Madeleine", effort: 120, AIMode: AIMode.GREEN, Status: Status.notStarted),
     ]
@@ -77,6 +77,12 @@ struct ContentView: View {
                     Text("AMBER").foregroundStyle(.orange)
                 } else {
                     Text("RED").foregroundStyle(.red)
+                }
+                
+                if let notes = assignment.notes {
+                    DisclosureGroup("Show Details") {
+                        Text(notes)
+                    } .frame(maxWidth: 220)
                 }
                 
                 if (assignment.Status == Status.notStarted) {
