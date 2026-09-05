@@ -2,7 +2,7 @@
 //  Assignment_TrackerApp.swift
 //  Assignment Tracker
 //
-//  Created by Madeleine Beaumont on 2026-09-01.
+//  Created by Michael Sault on 2026-09-01.
 //
 
 import SwiftUI
